@@ -1,0 +1,39 @@
+import type { Metadata } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import "./globals.css";
+
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+export const metadata: Metadata = {
+  title: "Atlas Pro TV — Abonnement IPTV Premium en France | +18 000 chaînes & VOD 4K",
+  description:
+    "Abonnement IPTV officiel en France : plus de 18 000 chaînes en direct et 40 000 films & séries en HD/4K. Activation instantanée, support francophone 7j/7, sans engagement.",
+  keywords: [
+    "IPTV France",
+    "abonnement IPTV",
+    "Atlas Pro TV",
+    "streaming 4K",
+    "chaînes TV en direct",
+  ],
+  openGraph: {
+    title: "Atlas Pro TV — Abonnement IPTV Premium en France",
+    description:
+      "+18 000 chaînes en direct et 40 000 films & séries en HD/4K. Activation instantanée, support francophone 7j/7.",
+    locale: "fr_FR",
+    type: "website",
+  },
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html lang="fr" className={`${jakarta.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-ink text-white selection:bg-primary">
+        {children}
+      </body>
+    </html>
+  );
+}

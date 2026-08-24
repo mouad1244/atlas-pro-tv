@@ -1,0 +1,24 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "atlas-pro-tv",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "numora-admin",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "numora/admin", "run", "dev"],
+      "port": 3002
+    },
+    {
+      "name": "numora-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "numora/backend", "run", "dev"],
+      "port": 4000
+    }
+  ]
+}
