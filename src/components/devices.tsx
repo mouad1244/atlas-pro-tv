@@ -34,7 +34,7 @@ export function Devices() {
             return (
               <div
                 key={device.title}
-                className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/8 hover:shadow-[0_16px_36px_-16px_rgba(124,92,255,0.4)]"
+                className="card-glass group rounded-2xl p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/[0.07] hover:shadow-[0_16px_36px_-16px_rgba(47,111,237,0.45)]"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/8 p-2 transition-transform duration-300 group-hover:scale-110">
                   {iconSrc ? (

@@ -46,7 +46,7 @@ export function Marquee({
         {loop.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="flex items-center gap-2 rounded-full px-6 py-1.5 text-[13px] font-medium whitespace-nowrap text-white/45 transition-all duration-300 ease-out hover:scale-110 hover:bg-white/5 hover:text-white hover:[text-shadow:0_0_18px_rgba(168,148,255,0.6)]"
+            className="flex items-center gap-2 rounded-full px-6 py-1.5 text-[13px] font-medium whitespace-nowrap text-white/45 transition-all duration-300 ease-out hover:scale-110 hover:bg-white/5 hover:text-white hover:[text-shadow:0_0_18px_rgba(111,164,255,0.65)]"
           >
             <span className="h-1 w-1 rounded-full bg-primary-light" />
             {item}

@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #150e29;
+  --background: #05070d;
+  --foreground: #eef1f8;
 
-  /* Brand */
-  --color-ink: #0a0716;
-  --color-ink-soft: #120c22;
-  --color-surface: #17102c;
-  --color-surface-light: #f7f6fb;
-  --color-primary: #7c5cff;
-  --color-primary-dark: #5a3ce0;
-  --color-primary-light: #a894ff;
+  /* Brand — midnight navy base with electric blue + subtle violet/cyan accents */
+  --color-ink: #05070d;
+  --color-ink-soft: #0a0f1d;
+  --color-surface: #0e1526;
+  --color-surface-light: #0a0f1d;
+  --color-primary: #2f6fed;
+  --color-primary-dark: #1c4fc4;
+  --color-primary-light: #6fa4ff;
+  --color-violet: #8b6bff;
   --color-cyan: #3ee0e8;
   --color-amber: #ffb545;
-  --color-muted: #948da8;
+  --color-muted: #8a91a8;
 }
 
 @theme inline {
@@ -29,6 +30,7 @@
   --color-primary: var(--color-primary);
   --color-primary-dark: var(--color-primary-dark);
   --color-primary-light: var(--color-primary-light);
+  --color-violet: var(--color-violet);
   --color-cyan: var(--color-cyan);
   --color-amber: var(--color-amber);
   --color-muted: var(--color-muted);
@@ -65,12 +67,21 @@
 }
 
 @keyframes badge-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 92, 255, 0.4); }
-  50% { box-shadow: 0 0 0 7px rgba(124, 92, 255, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(47, 111, 237, 0.45); }
+  50% { box-shadow: 0 0 0 7px rgba(47, 111, 237, 0); }
 }
 
 .animate-badge-pulse {
   animation: badge-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes stat-glow {
+  0%, 100% { text-shadow: 0 0 0 rgba(47, 111, 237, 0); }
+  50% { text-shadow: 0 0 20px rgba(111, 164, 255, 0.65); }
+}
+
+.stat-counting {
+  animation: stat-glow 0.7s ease-in-out infinite;
 }
 
 .animate-fade-up {
@@ -136,7 +147,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #a894ff 0%, #7c5cff 45%, #3ee0e8 100%);
+  background: linear-gradient(90deg, #6fa4ff 0%, #2f6fed 45%, #3ee0e8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -144,13 +155,18 @@ body {
 
 .bg-radial-glow {
   background-image:
-    radial-gradient(60% 50% at 20% 10%, rgba(124, 92, 255, 0.35), transparent 60%),
-    radial-gradient(50% 45% at 85% 15%, rgba(62, 224, 232, 0.18), transparent 60%),
-    radial-gradient(60% 60% at 50% 100%, rgba(90, 60, 224, 0.25), transparent 60%);
+    radial-gradient(60% 50% at 20% 10%, rgba(47, 111, 237, 0.38), transparent 60%),
+    radial-gradient(50% 45% at 85% 15%, rgba(62, 224, 232, 0.16), transparent 60%),
+    radial-gradient(60% 60% at 50% 100%, rgba(139, 107, 255, 0.2), transparent 60%);
 }
 
 .card-hairline {
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
 .grain-noise {

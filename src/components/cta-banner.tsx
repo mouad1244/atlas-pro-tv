@@ -16,7 +16,7 @@ export function CtaBanner() {
         <div className="mt-9 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
           <a
             href="#pricing"
-            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-light via-primary to-primary-dark px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(124,92,255,0.65)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-light via-primary to-primary-dark px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(47,111,237,0.65)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
             Choisir mon forfait
           </a>

@@ -9,6 +9,12 @@
       "autoPort": true
     },
     {
+      "name": "iron-tv-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "../atlas-iron-tv-worktree", "run", "dev", "--", "-p", "3010"],
+      "port": 3010
+    },
+    {
       "name": "numora-admin",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["--prefix", "numora/admin", "run", "dev"],

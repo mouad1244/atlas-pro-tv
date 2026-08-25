@@ -3,11 +3,12 @@ import { waLink } from "@/lib/config";
 import { PlayIcon, StarIcon, ZapIcon } from "./icons";
 import { Countdown } from "./countdown";
 import { CONTENT_ITEMS, DEVICE_ITEMS, Marquee } from "./marquee";
+import { StatCounter } from "./stat-counter";
 
 const STATS = [
-  { value: "18 000+", label: "chaînes en direct" },
-  { value: "40 000+", label: "films & séries VOD" },
-  { value: "15 000+", label: "clients satisfaits" },
+  { value: 18000, suffix: "+", label: "chaînes en direct" },
+  { value: 40000, suffix: "+", label: "films & séries VOD" },
+  { value: 15000, suffix: "+", label: "clients satisfaits" },
 ];
 
 export function Hero() {
@@ -19,7 +20,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover opacity-70 md:hidden"
+        className="object-cover object-top opacity-95 md:hidden"
       />
       <Image
         src="/assets/hero-bg.jpg"
@@ -27,9 +28,10 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="hidden object-cover opacity-70 md:block"
+        className="hidden object-cover object-top opacity-95 md:block"
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/55 to-ink" />
+      <div className="pointer-events-none absolute inset-0 bg-primary-dark/40 mix-blend-multiply" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/45 via-ink/65 to-ink" />
       <div className="pointer-events-none absolute inset-0 bg-radial-glow animate-glow" />
       <div className="pointer-events-none absolute inset-0 grain-noise" />
 
@@ -73,7 +75,7 @@ export function Hero() {
         >
           <a
             href="#pricing"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-light via-primary to-primary-dark px-7 py-3.5 text-[15px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(124,92,255,0.65)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-light via-primary to-primary-dark px-7 py-3.5 text-[15px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(47,111,237,0.65)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
             Voir les forfaits
           </a>
@@ -126,8 +128,8 @@ export function Hero() {
         >
           {STATS.map((stat) => (
             <div key={stat.label} className="transition-transform duration-300 hover:-translate-y-0.5">
-              <p className="text-2xl font-semibold text-white sm:text-3xl">
-                {stat.value}
+              <p className="text-2xl font-semibold tabular-nums text-white sm:text-3xl">
+                <StatCounter value={stat.value} suffix={stat.suffix} />
               </p>
               <p className="mt-1 text-[12.5px] text-white/50 sm:text-[13px]">
                 {stat.label}
