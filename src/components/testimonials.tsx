@@ -1,5 +1,6 @@
 import { TESTIMONIALS } from "@/lib/config";
 import { StarIcon } from "./icons";
+import { Reveal } from "./reveal";
 
 const LOOP = [...TESTIMONIALS, ...TESTIMONIALS];
 
@@ -7,7 +8,7 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="relative overflow-hidden bg-white py-20 md:py-28">
       <div className="container-page">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-[13px] font-semibold text-primary-dark">
             Témoignages clients
           </span>
@@ -18,7 +19,7 @@ export function Testimonials() {
             Plus de 15 000 clients nous font confiance chaque jour en France
             et en Europe.
           </p>
-        </div>
+        </Reveal>
       </div>
 
       <div className="group relative mt-14">
@@ -26,7 +27,7 @@ export function Testimonials() {
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent sm:w-28" />
 
         <div
-          className="flex w-max items-stretch gap-5 px-5 py-2 animate-marquee group-hover:[animation-play-state:paused] sm:gap-6 sm:px-8"
+          className="flex w-max items-stretch gap-5 px-5 py-2 will-change-transform animate-marquee group-hover:[animation-play-state:paused] sm:gap-6 sm:px-8"
           style={{ animationDuration: "60s" }}
         >
           {LOOP.map((t, i) => (

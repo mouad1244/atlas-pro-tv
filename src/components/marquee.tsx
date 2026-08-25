@@ -38,7 +38,7 @@ export function Marquee({
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-ink to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-ink to-transparent" />
       <div
-        className={`flex w-max items-center group-hover:[animation-play-state:paused] ${
+        className={`flex w-max items-center will-change-transform group-hover:[animation-play-state:paused] ${
           reverse ? "animate-marquee-reverse" : "animate-marquee"
         }`}
         style={{ animationDuration: "42s" }}

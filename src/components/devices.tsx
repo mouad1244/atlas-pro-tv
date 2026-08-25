@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { DEVICES, waLink } from "@/lib/config";
 import { MonitorIcon } from "./icons";
+import { Reveal } from "./reveal";
 
 const ICON_IMAGES = [
   "/assets/icon-tv.png",
@@ -14,7 +15,7 @@ export function Devices() {
     <section id="devices" className="relative overflow-hidden bg-ink py-20 md:py-28">
       <div className="pointer-events-none absolute inset-0 bg-radial-glow opacity-60" />
       <div className="container-page relative">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center rounded-full border border-white/12 bg-white/5 px-4 py-1.5 text-[13px] font-semibold text-white/75">
             Compatibilité
           </span>
@@ -25,17 +26,17 @@ export function Devices() {
             Une seule formule, tous vos appareils. Installation guidée fournie
             pour chaque plateforme.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" delay={100}>
           {DEVICES.map((device, i) => {
             const iconSrc = ICON_IMAGES[i];
             return (
               <div
                 key={device.title}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition-colors hover:border-primary/40 hover:bg-white/8"
+                className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/8 hover:shadow-[0_16px_36px_-16px_rgba(124,92,255,0.4)]"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/8 p-2">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/8 p-2 transition-transform duration-300 group-hover:scale-110">
                   {iconSrc ? (
                     <Image
                       src={iconSrc}
@@ -57,7 +58,7 @@ export function Devices() {
               </div>
             );
           })}
-        </div>
+        </Reveal>
 
         <div className="mt-12 flex justify-center">
           <a

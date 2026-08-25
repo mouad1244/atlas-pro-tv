@@ -7,6 +7,7 @@ import {
   ShieldIcon,
   TvIcon,
 } from "./icons";
+import { Reveal } from "./reveal";
 
 const ICONS = [TvIcon, FilmIcon, LayersIcon, ClockIcon, ShieldIcon, HeadsetIcon];
 
@@ -15,7 +16,7 @@ export function Features() {
     <section id="features" className="relative bg-white py-20 md:py-28">
       <div className="container-page">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16">
-          <div className="lg:sticky lg:top-32">
+          <Reveal className="lg:sticky lg:top-32">
             <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-[13px] font-semibold text-primary-dark">
               Pourquoi Atlas Pro TV
             </span>
@@ -27,17 +28,17 @@ export function Features() {
               réactif : tout ce qu&apos;il faut pour ne plus jamais rater vos
               programmes préférés.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid gap-5 sm:grid-cols-2">
+          <Reveal className="grid gap-5 sm:grid-cols-2" delay={100}>
             {FEATURES.map((feature, i) => {
               const Icon = ICONS[i];
               return (
                 <div
                   key={feature.title}
-                  className="rounded-2xl border border-black/6 bg-surface-light p-6 transition-colors hover:border-primary/25 hover:bg-primary/5"
+                  className="group rounded-2xl border border-black/6 bg-surface-light p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:bg-primary/5 hover:shadow-[0_16px_36px_-20px_rgba(16,10,35,0.25)]"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-white">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-white transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-5 w-5" />
                   </span>
                   <h3 className="mt-4 text-[16px] font-semibold text-ink">
@@ -49,7 +50,7 @@ export function Features() {
                 </div>
               );
             })}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

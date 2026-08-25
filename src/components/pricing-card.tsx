@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Plan } from "@/lib/config";
 import { waLink } from "@/lib/config";
-import { CheckIcon, ShieldIcon } from "./icons";
+import { CheckIcon, GiftIcon, ShieldIcon } from "./icons";
 
 function discountPercent(price: string, oldPrice: string) {
   const p = parseFloat(price.replace(",", "."));
@@ -14,14 +14,14 @@ export function PricingCard({ plan }: { plan: Plan }) {
 
   return (
     <div
-      className={`group relative flex h-full flex-col rounded-[1.75rem] p-7 transition-all duration-300 ease-out sm:p-8 ${
+      className={`group relative flex h-full flex-col rounded-[2rem] p-7 transition-all duration-300 ease-out sm:p-8 ${
         plan.featured
-          ? "border border-primary/40 bg-gradient-to-b from-surface to-ink-soft shadow-[0_25px_60px_-20px_rgba(124,92,255,0.55)] hover:-translate-y-2 hover:shadow-[0_32px_70px_-16px_rgba(124,92,255,0.65)] lg:-translate-y-4 lg:hover:-translate-y-6"
-          : "border border-black/6 bg-white shadow-[0_1px_2px_rgba(16,10,35,0.04)] hover:-translate-y-1.5 hover:border-primary/25 hover:shadow-[0_24px_48px_-20px_rgba(16,10,35,0.18)]"
+          ? "border border-primary/40 bg-gradient-to-b from-surface to-ink-soft shadow-[0_25px_60px_-20px_rgba(124,92,255,0.55)] hover:-translate-y-2 hover:shadow-[0_34px_74px_-16px_rgba(124,92,255,0.65)] lg:-translate-y-4 lg:hover:-translate-y-6"
+          : "border border-primary/12 bg-white shadow-[0_2px_14px_-6px_rgba(124,92,255,0.14),0_1px_2px_rgba(16,10,35,0.04)] hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_28px_56px_-20px_rgba(124,92,255,0.28)]"
       }`}
     >
       {plan.badge && (
-        <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary-light to-primary px-4 py-1.5 text-[12px] font-semibold text-white shadow-lg">
+        <span className="animate-badge-pulse absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary-light via-primary to-cyan px-4 py-1.5 text-[12px] font-bold text-white shadow-lg">
           {plan.badge}
         </span>
       )}
@@ -34,22 +34,30 @@ export function PricingCard({ plan }: { plan: Plan }) {
         >
           {plan.screens} · {plan.duration}
         </span>
+
+        {plan.bonusMonths && (
+          <div className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-gradient-to-r from-amber via-[#ffcf70] to-amber px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wide text-ink shadow-[0_8px_20px_-8px_rgba(255,181,69,0.75)]">
+            <GiftIcon className="h-3.5 w-3.5 shrink-0" />
+            {plan.duration} + {plan.bonusMonths} mois offerts
+          </div>
+        )}
+
         <h3 className="mt-3 text-[1.4rem] font-semibold tracking-tight">
           {plan.name}
         </h3>
 
         <div className="mt-5 flex flex-wrap items-end gap-2.5">
-          <span className="text-[2.75rem] font-semibold leading-none tracking-tight">
+          <span className="text-[2.9rem] font-bold leading-none tracking-tight">
             {plan.price}€
           </span>
           <span
-            className={`mb-1.5 text-[15px] line-through ${
+            className={`mb-1 text-[13px] font-medium line-through opacity-70 ${
               plan.featured ? "text-white/40" : "text-black/35"
             }`}
           >
             {plan.oldPrice}€
           </span>
-          <span className="mb-1.5 inline-flex items-center rounded-full bg-amber/15 px-2 py-0.5 text-[12px] font-semibold text-amber">
+          <span className="mb-1 inline-flex items-center rounded-full bg-amber/15 px-2 py-0.5 text-[11.5px] font-bold text-amber">
             -{discount}%
           </span>
         </div>
@@ -62,18 +70,33 @@ export function PricingCard({ plan }: { plan: Plan }) {
         href={waLink(
           `Bonjour, je souhaite souscrire à l'offre ${plan.name} (${plan.screens}, ${plan.duration}) à ${plan.price}€.`
         )}
-        className={`mt-7 inline-flex items-center justify-center rounded-full px-6 py-3.5 text-[14.5px] font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] ${
-          plan.featured
-            ? "bg-white text-ink shadow-[0_12px_28px_-10px_rgba(255,255,255,0.35)] hover:shadow-[0_16px_34px_-8px_rgba(255,255,255,0.5)]"
-            : "bg-ink text-white shadow-[0_12px_28px_-14px_rgba(16,10,35,0.5)] hover:shadow-[0_16px_34px_-10px_rgba(16,10,35,0.6)]"
-        }`}
+        className="mt-7 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber via-[#ffcf70] to-amber px-6 py-3.5 text-[13.5px] font-bold uppercase tracking-wide text-ink shadow-[0_14px_30px_-10px_rgba(255,181,69,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_38px_-8px_rgba(255,181,69,0.75)] active:scale-[0.98] active:translate-y-0"
       >
-        S&apos;abonner maintenant
+        Profitez de l&apos;offre
       </a>
 
+      <ul className="mt-7 flex flex-1 flex-col gap-4">
+        {plan.features.map((feature) => (
+          <li key={feature} className="flex items-start gap-3 text-[14px] leading-relaxed">
+            <span
+              className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
+                plan.featured
+                  ? "bg-gradient-to-br from-primary-light/30 to-cyan/20 text-primary-light"
+                  : "bg-gradient-to-br from-primary/15 to-cyan/10 text-primary-dark"
+              }`}
+            >
+              <CheckIcon className="h-3 w-3" />
+            </span>
+            <span className={plan.featured ? "text-white/75" : "text-black/65"}>
+              {feature}
+            </span>
+          </li>
+        ))}
+      </ul>
+
       <div
-        className={`mt-4 flex flex-col gap-3 border-t pt-4 ${
-          plan.featured ? "border-white/10" : "border-black/8"
+        className={`mt-7 flex flex-col gap-3 rounded-2xl border p-4 ${
+          plan.featured ? "border-white/10 bg-white/5" : "border-primary/10 bg-primary/[0.03]"
         }`}
       >
         <div
@@ -111,23 +134,6 @@ export function PricingCard({ plan }: { plan: Plan }) {
           Garantie satisfaction 7 jours
         </div>
       </div>
-
-      <ul className="mt-7 flex flex-1 flex-col gap-3.5">
-        {plan.features.map((feature) => (
-          <li key={feature} className="flex items-start gap-2.5 text-[14px] leading-snug">
-            <span
-              className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
-                plan.featured ? "bg-primary/25 text-primary-light" : "bg-primary/10 text-primary-dark"
-              }`}
-            >
-              <CheckIcon className="h-3 w-3" />
-            </span>
-            <span className={plan.featured ? "text-white/75" : "text-black/65"}>
-              {feature}
-            </span>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }

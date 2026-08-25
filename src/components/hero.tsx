@@ -14,15 +14,23 @@ export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-ink pt-20 pb-20 md:pt-24 md:pb-28">
       <Image
+        src="/assets/hero-bg-mobile.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover opacity-70 md:hidden"
+      />
+      <Image
         src="/assets/hero-bg.jpg"
         alt=""
         fill
         priority
         sizes="100vw"
-        className="object-cover opacity-70"
+        className="hidden object-cover opacity-70 md:block"
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/55 to-ink" />
-      <div className="pointer-events-none absolute inset-0 bg-radial-glow" />
+      <div className="pointer-events-none absolute inset-0 bg-radial-glow animate-glow" />
       <div className="pointer-events-none absolute inset-0 grain-noise" />
 
       <div className="relative">
@@ -31,7 +39,9 @@ export function Hero() {
       </div>
 
       <div className="container-page relative mt-14 flex flex-col items-center text-center md:mt-20">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-1.5 text-[13px] font-medium text-white/80 backdrop-blur">
+        <div
+          className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-1.5 text-[13px] font-medium text-white/80 backdrop-blur"
+        >
           <span className="relative flex h-1.5 w-1.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan opacity-75" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan" />
@@ -39,19 +49,28 @@ export function Hero() {
           Offre de lancement — places limitées
         </div>
 
-        <h1 className="mt-6 max-w-3xl text-[2.6rem] leading-[1.08] font-semibold tracking-tight text-white sm:text-6xl">
+        <h1
+          className="animate-fade-up mt-6 max-w-3xl text-[2.6rem] leading-[1.08] font-semibold tracking-tight text-white sm:text-6xl"
+          style={{ animationDelay: "90ms" }}
+        >
           Abonnement <span className="text-gradient">Atlas Pro TV</span>
           <br />
           N°1 en France
         </h1>
 
-        <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/60">
+        <p
+          className="animate-fade-up mt-6 max-w-xl text-[17px] leading-relaxed text-white/60"
+          style={{ animationDelay: "180ms" }}
+        >
           Plus de 18 000 chaînes en direct et 40 000 films &amp; séries en
           HD/4K, sur tous vos écrans. Activation en quelques minutes, sans
           engagement, avec un support francophone disponible 7j/7.
         </p>
 
-        <div className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+        <div
+          className="animate-fade-up mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center"
+          style={{ animationDelay: "270ms" }}
+        >
           <a
             href="#pricing"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-light via-primary to-primary-dark px-7 py-3.5 text-[15px] font-semibold text-white shadow-[0_18px_40px_-12px_rgba(124,92,255,0.65)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
@@ -67,13 +86,19 @@ export function Hero() {
           </a>
         </div>
 
-        <div className="mt-7 inline-flex items-center gap-2.5 rounded-full border border-amber/25 bg-amber/10 px-4 py-2 text-[13px] font-medium text-amber">
+        <div
+          className="animate-fade-up mt-7 inline-flex items-center gap-2.5 rounded-full border border-amber/25 bg-amber/10 px-4 py-2 text-[13px] font-medium text-amber"
+          style={{ animationDelay: "360ms" }}
+        >
           <ZapIcon className="h-3.5 w-3.5" />
           Offre se termine dans
           <Countdown className="flex items-center font-semibold text-white" />
         </div>
 
-        <div className="mt-14 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+        <div
+          className="animate-fade-up mt-14 flex flex-wrap items-center justify-center gap-x-10 gap-y-4"
+          style={{ animationDelay: "450ms" }}
+        >
           <div className="flex -space-x-2.5">
             {["MK", "SB", "AL", "JD"].map((initials) => (
               <span
@@ -95,9 +120,12 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="mt-14 grid w-full max-w-2xl grid-cols-3 gap-4 border-t border-white/10 pt-10">
+        <div
+          className="animate-fade-up mt-14 grid w-full max-w-2xl grid-cols-3 gap-4 border-t border-white/10 pt-10"
+          style={{ animationDelay: "540ms" }}
+        >
           {STATS.map((stat) => (
-            <div key={stat.label}>
+            <div key={stat.label} className="transition-transform duration-300 hover:-translate-y-0.5">
               <p className="text-2xl font-semibold text-white sm:text-3xl">
                 {stat.value}
               </p>

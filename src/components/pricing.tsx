@@ -2,6 +2,7 @@ import { PLANS } from "@/lib/config";
 import { PricingCard } from "./pricing-card";
 import { Countdown } from "./countdown";
 import { ShieldIcon, ZapIcon, HeadsetIcon } from "./icons";
+import { Reveal } from "./reveal";
 
 const TRUST_ITEMS = [
   { icon: ZapIcon, label: "Activation en moins de 15 minutes" },
@@ -13,7 +14,7 @@ export function Pricing() {
   return (
     <section id="pricing" className="relative bg-surface-light py-20 md:py-28">
       <div className="container-page">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-[13px] font-semibold text-primary-dark">
             Tarifs &amp; abonnements
           </span>
@@ -30,11 +31,13 @@ export function Pricing() {
             <span>🔥 Offre limitée, se termine dans</span>
             <Countdown className="flex items-center font-semibold text-ink" />
           </div>
-        </div>
+        </Reveal>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-3 lg:gap-7">
-          {PLANS.map((plan) => (
-            <PricingCard key={plan.id} plan={plan} />
+          {PLANS.map((plan, i) => (
+            <Reveal key={plan.id} className="h-full" delay={100 + i * 120}>
+              <PricingCard plan={plan} />
+            </Reveal>
           ))}
         </div>
 

@@ -187,6 +187,22 @@ export function FilmIcon({ className }: IconProps) {
   );
 }
 
+export function GiftIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <rect x="3.5" y="9" width="17" height="4.2" rx="1" stroke="currentColor" strokeWidth={1.7} strokeLinejoin="round" />
+      <path d="M5 13.2V20a1.2 1.2 0 001.2 1.2h11.6A1.2 1.2 0 0019 20v-6.8" stroke="currentColor" strokeWidth={1.7} strokeLinejoin="round" />
+      <path d="M12 9v12.2" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" />
+      <path
+        d="M12 9c0-2.4-1.6-4.3-3.5-4.3S6 6.3 6.6 7.7C7.2 9 9.2 9 12 9zM12 9c0-2.4 1.6-4.3 3.5-4.3S18 6.3 17.4 7.7C16.8 9 14.8 9 12 9z"
+        stroke="currentColor"
+        strokeWidth={1.6}
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function PlayIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">

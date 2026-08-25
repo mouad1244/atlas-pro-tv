@@ -1,10 +1,11 @@
 import { waLink } from "@/lib/config";
+import { Reveal } from "./reveal";
 
 export function CtaBanner() {
   return (
     <section className="relative overflow-hidden bg-ink py-20 md:py-24">
       <div className="pointer-events-none absolute inset-0 bg-radial-glow" />
-      <div className="container-page relative text-center">
+      <Reveal className="container-page relative text-center">
         <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-[2.5rem] sm:leading-[1.15]">
           Prêt à changer votre façon de regarder la TV ?
         </h2>
@@ -26,7 +27,7 @@ export function CtaBanner() {
             Essai gratuit 24h
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

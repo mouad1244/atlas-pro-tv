@@ -29,6 +29,7 @@ export type Plan = {
   perMonth: string;
   featured: boolean;
   badge?: string;
+  bonusMonths?: number;
   features: string[];
 };
 
@@ -61,6 +62,7 @@ export const PLANS: Plan[] = [
     perMonth: "≈ 5,00€ / mois",
     featured: true,
     badge: "Le plus choisi",
+    bonusMonths: 4,
     features: [
       "2 écrans utilisables simultanément",
       "Streaming HD, Full HD et 4K",
@@ -80,6 +82,7 @@ export const PLANS: Plan[] = [
     oldPrice: "129,99",
     perMonth: "≈ 6,67€ / mois",
     featured: false,
+    bonusMonths: 4,
     features: [
       "3 écrans utilisables simultanément",
       "Streaming HD, Full HD et 4K",
@@ -157,31 +160,37 @@ export const TESTIMONIALS = [
   {
     name: "Camille L.",
     role: "Paris",
+    photo: "/assets/testimonials/camille.jpg",
     text: "Activation en moins de 10 minutes et une image nickel en 4K sur ma Smart TV. Le support répond vraiment vite sur WhatsApp.",
   },
   {
     name: "Julien M.",
     role: "Lyon",
+    photo: "/assets/testimonials/julien.jpg",
     text: "J'utilise le pack 2 écrans avec ma compagne, aucune coupure même le soir en heure de pointe. Très bon rapport qualité-prix.",
   },
   {
     name: "Sophie B.",
     role: "Marseille",
+    photo: "/assets/testimonials/sophie.jpg",
     text: "Le catalogue VOD est énorme et mis à jour régulièrement. Les chaînes sport passent sans latence pendant les matchs.",
   },
   {
     name: "Nadia R.",
     role: "Bruxelles",
+    photo: "/assets/testimonials/nadia.jpg",
     text: "Installation assistée par le support, tout s'est fait en visio en 15 minutes. Je recommande pour toute la famille.",
   },
   {
     name: "Thomas D.",
     role: "Toulouse",
+    photo: "/assets/testimonials/thomas.jpg",
     text: "Compatible avec ma box Android et mon iPhone, je passe de l'un à l'autre sans souci. Le replay est vraiment pratique.",
   },
   {
     name: "Fatima K.",
     role: "Genève",
+    photo: "/assets/testimonials/fatima.jpg",
     text: "Trois écrans actifs en même temps chez nous, chacun regarde ce qu'il veut. Aucun bug depuis plusieurs mois.",
   },
 ];
