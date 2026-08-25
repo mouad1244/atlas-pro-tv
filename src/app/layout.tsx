@@ -9,18 +9,19 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Atlas Pro TV — Abonnement IPTV Premium en France | +18 000 chaînes & VOD 4K",
+  title: "IRON TV — Streaming Premium Nouvelle Génération | +18 000 chaînes & VOD 4K",
   description:
-    "Abonnement IPTV officiel en France : plus de 18 000 chaînes en direct et 40 000 films & séries en HD/4K. Activation instantanée, support francophone 7j/7, sans engagement.",
+    "IRON TV, l'abonnement streaming premium pensé pour la France : plus de 18 000 chaînes en direct et 40 000 films & séries en HD/4K. Activation instantanée, support francophone 7j/7, sans engagement.",
   keywords: [
     "IPTV France",
     "abonnement IPTV",
-    "Atlas Pro TV",
+    "IRON TV",
+    "streaming premium",
     "streaming 4K",
     "chaînes TV en direct",
   ],
   openGraph: {
-    title: "Atlas Pro TV — Abonnement IPTV Premium en France",
+    title: "IRON TV — Streaming Premium Nouvelle Génération",
     description:
       "+18 000 chaînes en direct et 40 000 films & séries en HD/4K. Activation instantanée, support francophone 7j/7.",
     locale: "fr_FR",

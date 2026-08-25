@@ -210,3 +210,62 @@ export function PlayIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+export function TrophyIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M7 4h10v5a5 5 0 01-10 0V4z"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7 5H4v1.5A3.5 3.5 0 007.5 10M17 5h3v1.5A3.5 3.5 0 0116.5 10"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M12 14v3.5M9 20.5h6M9.5 20.5c0-1.8.7-2.7 2.5-3 1.8.3 2.5 1.2 2.5 3" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function CameraIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M3.5 8.2c0-1 .8-1.7 1.7-1.7h2l1.1-1.8h7.4l1.1 1.8h2c1 0 1.7.8 1.7 1.7v9.6c0 1-.8 1.7-1.7 1.7H5.2c-1 0-1.7-.8-1.7-1.7V8.2z"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="13" r="3.6" stroke="currentColor" strokeWidth={1.7} />
+    </svg>
+  );
+}
+
+export function NewsIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth={1.7} />
+      <path
+        d="M7 9h4M7 12.5h10M7 15.5h10"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinecap="round"
+      />
+      <circle cx="16.2" cy="9" r="0.15" stroke="currentColor" strokeWidth={1.7} />
+    </svg>
+  );
+}
+
+export function SparkleIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12 2.5c.6 3.6 2.2 5.2 5.8 5.8-3.6.6-5.2 2.2-5.8 5.8-.6-3.6-2.2-5.2-5.8-5.8 3.6-.6 5.2-2.2 5.8-5.8z" />
+      <path d="M18.5 14.5c.35 2 1.25 2.9 3.25 3.25-2 .35-2.9 1.25-3.25 3.25-.35-2-1.25-2.9-3.25-3.25 2-.35 2.9-1.25 3.25-3.25z" />
+    </svg>
+  );
+}

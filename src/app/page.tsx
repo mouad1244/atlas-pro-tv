@@ -1,7 +1,9 @@
 import { SiteHeader } from "@/components/site-header";
 import { Hero } from "@/components/hero";
+import { TrustBar } from "@/components/trust-bar";
 import { Pricing } from "@/components/pricing";
 import { Features } from "@/components/features";
+import { Experience } from "@/components/experience";
 import { Devices } from "@/components/devices";
 import { HowItWorks } from "@/components/how-it-works";
 import { Testimonials } from "@/components/testimonials";
@@ -16,8 +18,10 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
+        <TrustBar />
         <Pricing />
         <Features />
+        <Experience />
         <Devices />
         <HowItWorks />
         <Testimonials />

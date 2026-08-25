@@ -12,24 +12,26 @@ const TRUST_ITEMS = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="relative bg-surface-light py-20 md:py-28">
-      <div className="container-page">
+    <section id="pricing" className="relative overflow-hidden bg-ink-soft py-20 md:py-28">
+      <div className="pointer-events-none absolute inset-0 bg-radial-glow opacity-60" />
+      <div className="pointer-events-none absolute inset-0 grain-noise" />
+      <div className="container-page relative">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-[13px] font-semibold text-primary-dark">
+          <span className="inline-flex items-center rounded-full border border-white/12 bg-white/5 px-4 py-1.5 text-[13px] font-semibold text-white/75">
             Tarifs &amp; abonnements
           </span>
-          <h2 className="mt-5 text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem]">
-            Choisissez votre formule Atlas Pro TV
+          <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-[2.6rem]">
+            Choisissez votre formule IRON TV
           </h2>
-          <p className="mt-4 text-[16px] leading-relaxed text-black/55">
+          <p className="mt-4 text-[16px] leading-relaxed text-white/55">
             Des abonnements officiels pensés pour la France et l&apos;Europe,
             avec un accès immédiat à plus de 18 000 chaînes et 40 000 films
             &amp; séries en HD/4K.
           </p>
 
-          <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/5 px-5 py-2.5 text-[13.5px] font-medium text-primary-dark">
+          <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-primary/25 bg-primary/10 px-5 py-2.5 text-[13.5px] font-medium text-primary-light">
             <span>🔥 Offre limitée, se termine dans</span>
-            <Countdown className="flex items-center font-semibold text-ink" />
+            <Countdown className="flex items-center font-semibold text-white" />
           </div>
         </Reveal>
 
@@ -41,10 +43,10 @@ export function Pricing() {
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col items-center gap-6 border-t border-black/8 pt-10 sm:flex-row sm:justify-center sm:gap-12">
+        <div className="mt-16 flex flex-col items-center gap-6 border-t border-white/10 pt-10 sm:flex-row sm:justify-center sm:gap-12">
           {TRUST_ITEMS.map((item) => (
-            <div key={item.label} className="flex items-center gap-2.5 text-[13.5px] font-medium text-black/60">
-              <item.icon className="h-4 w-4 text-primary-dark" />
+            <div key={item.label} className="flex items-center gap-2.5 text-[13.5px] font-medium text-white/60">
+              <item.icon className="h-4 w-4 text-primary-light" />
               {item.label}
             </div>
           ))}

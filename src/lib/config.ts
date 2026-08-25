@@ -1,7 +1,7 @@
 export const SITE = {
-  name: "Atlas Pro TV",
-  tagline: "IPTV Premium France",
-  domain: "atlasprotv.fr",
+  name: "IRON TV",
+  tagline: "Streaming Premium Nouvelle Génération",
+  domain: "irontv.fr",
   // TODO: remplacez par votre vrai numéro WhatsApp (format international, sans "+" ni espaces)
   whatsappNumber: "212600000000",
 };
@@ -14,6 +14,7 @@ export const NAV_LINKS = [
   { label: "Accueil", href: "#home" },
   { label: "Tarifs", href: "#pricing" },
   { label: "Fonctionnalités", href: "#features" },
+  { label: "Univers", href: "#experience" },
   { label: "Appareils", href: "#devices" },
   { label: "Avis", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
@@ -141,6 +142,33 @@ export const DEVICES = [
   },
 ];
 
+export const EXPERIENCE_CATEGORIES = [
+  {
+    title: "Sport",
+    desc: "Football, basketball, tennis et grandes compétitions en direct, sans coupure.",
+  },
+  {
+    title: "Films",
+    desc: "Un catalogue cinéma renouvelé chaque semaine, en HD et 4K.",
+  },
+  {
+    title: "Séries",
+    desc: "Les sagas du moment et les classiques, saison après saison.",
+  },
+  {
+    title: "Documentaires",
+    desc: "Nature, histoire, science : explorez le monde autrement.",
+  },
+  {
+    title: "Information",
+    desc: "Chaînes d'info françaises et internationales, en continu.",
+  },
+  {
+    title: "Divertissement",
+    desc: "Talk-shows, musique et programmes jeunesse pour toute la famille.",
+  },
+];
+
 export const STEPS = [
   {
     title: "Choisissez votre forfait",
@@ -209,7 +237,7 @@ export const FAQS = [
     a: "Oui, selon la formule choisie (1, 2 ou 3 écrans) vous pouvez regarder en simultané sur plusieurs appareils : Smart TV, mobile, tablette, PC ou box Android.",
   },
   {
-    q: "Quels appareils sont compatibles avec Atlas Pro TV ?",
+    q: "Quels appareils sont compatibles avec IRON TV ?",
     a: "Le service fonctionne sur la majorité des équipements : Smart TV (Samsung, LG), Android TV, Fire Stick, box Android, smartphones et tablettes iOS/Android, PC et Mac.",
   },
   {

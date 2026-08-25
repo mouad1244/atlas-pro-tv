@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import { NAV_LINKS, SITE, waLink } from "@/lib/config";
+import { NAV_LINKS, waLink } from "@/lib/config";
 import { CloseIcon, MenuIcon } from "./icons";
+import { Logo } from "./logo";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,18 +26,12 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-ink/85 backdrop-blur-xl border-b border-white/8" : "bg-transparent"
+        scrolled ? "bg-ink/85 backdrop-blur-xl border-b border-primary/15" : "bg-transparent"
       }`}
     >
       <div className="container-page flex h-18 items-center justify-between py-3.5">
         <a href="#home" className="flex items-center gap-2.5 shrink-0">
-          <Image
-            src="/assets/logo.png"
-            alt={SITE.name}
-            width={381}
-            height={199}
-            className="h-8 w-auto object-contain md:h-9"
-          />
+          <Logo />
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -54,7 +48,7 @@ export function SiteHeader() {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href={waLink("Bonjour, je souhaite un essai gratuit Atlas Pro TV.")}
+            href={waLink("Bonjour, je souhaite un essai gratuit IRON TV.")}
             className="text-[14.5px] font-medium text-white/75 hover:text-white transition-colors"
           >
             Essai gratuit
@@ -77,8 +71,14 @@ export function SiteHeader() {
         </button>
       </div>
 
-      {open && (
-        <div className="lg:hidden border-t border-white/8 bg-ink/97 backdrop-blur-xl">
+      <div
+        inert={!open}
+        aria-hidden={!open}
+        className={`grid overflow-hidden border-t border-white/8 bg-ink/97 backdrop-blur-xl transition-all duration-300 ease-in-out lg:hidden ${
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] border-t-0 opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
           <div className="container-page flex flex-col gap-1 py-5">
             {NAV_LINKS.map((link) => (
               <a
@@ -99,7 +99,7 @@ export function SiteHeader() {
             </a>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }

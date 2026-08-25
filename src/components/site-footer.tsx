@@ -1,20 +1,16 @@
 import Image from "next/image";
 import { NAV_LINKS, SITE, waLink } from "@/lib/config";
+import { Logo } from "./logo";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-ink pt-16 pb-8">
+    <footer className="relative border-t border-white/10 bg-ink pt-16 pb-8">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
       <div className="container-page">
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2.5">
-              <Image
-                src="/assets/logo.png"
-                alt={SITE.name}
-                width={381}
-                height={199}
-                className="h-8 w-auto object-contain md:h-9"
-              />
+              <Logo />
             </div>
             <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-white/50">
               {SITE.name} est un service IPTV pensé pour la France et
@@ -44,7 +40,7 @@ export function SiteFooter() {
             <ul className="mt-4 flex flex-col gap-2.5">
               <li>
                 <a
-                  href={waLink("Bonjour, j'ai besoin d'aide avec Atlas Pro TV.")}
+                  href={waLink("Bonjour, j'ai besoin d'aide avec IRON TV.")}
                   className="text-[14px] text-white/50 transition-colors hover:text-white"
                 >
                   WhatsApp — support 7j/7
