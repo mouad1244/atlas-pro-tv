@@ -2,7 +2,7 @@ import Image from "next/image";
 import { waLink } from "@/lib/config";
 import { PlayIcon, StarIcon, ZapIcon } from "./icons";
 import { Countdown } from "./countdown";
-import { CONTENT_ITEMS, DEVICE_ITEMS, Marquee } from "./marquee";
+import { DEVICE_ITEMS, Marquee } from "./marquee";
 import { StatCounter } from "./stat-counter";
 
 const STATS = [
@@ -37,7 +37,6 @@ export function Hero() {
 
       <div className="relative">
         <Marquee items={DEVICE_ITEMS} />
-        <Marquee items={CONTENT_ITEMS} reverse />
       </div>
 
       <div className="container-page relative mt-14 flex flex-col items-center text-center md:mt-20">
