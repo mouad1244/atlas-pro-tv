@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { NAV_LINKS, SITE, waLink } from "@/lib/config";
-import { Logo } from "./logo";
 
 export function SiteFooter() {
   return (
@@ -10,7 +9,13 @@ export function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2.5">
-              <Logo />
+              <Image
+                src="/assets/logo.png"
+                alt={SITE.name}
+                width={900}
+                height={696}
+                className="h-11 w-auto object-contain"
+              />
             </div>
             <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-white/50">
               {SITE.name} est un service IPTV pensé pour la France et

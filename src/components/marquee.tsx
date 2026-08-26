@@ -24,6 +24,39 @@ export const CONTENT_ITEMS = [
   "Chaînes jeunesse",
 ];
 
+const HERO_PHOTOS = ["1", "2", "3", "4", "5"].map(
+  (n) => `/assets/hero-marquee/${n}.avif`
+);
+
+export function PhotoMarquee() {
+  const loop = [...HERO_PHOTOS, ...HERO_PHOTOS];
+
+  return (
+    <div className="group relative overflow-hidden border-y border-white/8 bg-white/[0.03] py-4">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-ink to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-ink to-transparent" />
+      <div
+        className="flex w-max items-center gap-4 will-change-transform group-hover:[animation-play-state:paused] animate-marquee"
+        style={{ animationDuration: "42s" }}
+      >
+        {loop.map((src, i) => (
+          <span
+            key={`${src}-${i}`}
+            className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/15 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.5)] transition-transform duration-300 ease-out hover:scale-110"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={src}
+              alt=""
+              className="h-full w-full object-cover"
+            />
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Marquee({
   items,
   reverse = false,

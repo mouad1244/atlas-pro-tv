@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { NAV_LINKS, waLink } from "@/lib/config";
+import Image from "next/image";
+import { NAV_LINKS, SITE, waLink } from "@/lib/config";
 import { CloseIcon, MenuIcon } from "./icons";
-import { Logo } from "./logo";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,7 +31,14 @@ export function SiteHeader() {
     >
       <div className="container-page flex h-18 items-center justify-between py-3.5">
         <a href="#home" className="flex items-center gap-2.5 shrink-0">
-          <Logo />
+          <Image
+            src="/assets/logo.png"
+            alt={SITE.name}
+            width={900}
+            height={696}
+            priority
+            className="h-10 w-auto object-contain md:h-11"
+          />
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -80,6 +87,13 @@ export function SiteHeader() {
       >
         <div className="overflow-hidden">
           <div className="container-page flex flex-col gap-1 py-5">
+            <Image
+              src="/assets/logo.png"
+              alt={SITE.name}
+              width={900}
+              height={696}
+              className="mb-3 h-9 w-auto self-start object-contain"
+            />
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}

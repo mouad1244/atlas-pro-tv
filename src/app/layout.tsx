@@ -8,7 +8,14 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "IRON TV — Streaming Premium Nouvelle Génération | +18 000 chaînes & VOD 4K",
   description:
     "IRON TV, l'abonnement streaming premium pensé pour la France : plus de 18 000 chaînes en direct et 40 000 films & séries en HD/4K. Activation instantanée, support francophone 7j/7, sans engagement.",

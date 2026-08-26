@@ -172,6 +172,48 @@ body {
   -webkit-backdrop-filter: blur(16px);
 }
 
+.hero-scrim-desktop {
+  background-image: linear-gradient(
+    100deg,
+    rgba(8, 6, 18, 0.96) 0%,
+    rgba(24, 16, 46, 0.93) 16%,
+    rgba(46, 27, 96, 0.8) 32%,
+    rgba(36, 23, 78, 0.52) 47%,
+    rgba(18, 13, 36, 0.24) 63%,
+    rgba(10, 7, 22, 0.06) 78%,
+    transparent 88%
+  );
+}
+
+.hero-scrim-mobile {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(10, 7, 22, 0.12) 0%,
+    rgba(24, 16, 46, 0.55) 42%,
+    rgba(20, 14, 40, 0.86) 68%,
+    rgba(10, 7, 22, 0.98) 100%
+  );
+}
+
+.hero-bloom {
+  background-image:
+    radial-gradient(38% 46% at 14% 16%, rgba(124, 92, 255, 0.55), transparent 65%),
+    radial-gradient(32% 40% at 8% 64%, rgba(76, 110, 245, 0.4), transparent 68%),
+    radial-gradient(26% 32% at 94% 28%, rgba(62, 224, 232, 0.32), transparent 70%),
+    radial-gradient(48% 58% at 55% 105%, rgba(90, 60, 224, 0.38), transparent 68%);
+  mix-blend-mode: screen;
+}
+
+.hero-vignette {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(10, 7, 22, 0.5) 0%,
+    transparent 14%,
+    transparent 80%,
+    rgba(10, 7, 22, 0.92) 100%
+  );
+}
+
 .grain-noise {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
 }
