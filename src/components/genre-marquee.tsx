@@ -26,7 +26,7 @@ export function GenreMarquee() {
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-ink to-transparent sm:w-28" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-ink to-transparent sm:w-28" />
       <div
-        className="flex w-max items-center gap-4 will-change-transform group-hover:[animation-play-state:paused] animate-marquee sm:gap-5"
+        className="flex w-max items-center will-change-transform group-hover:[animation-play-state:paused] animate-marquee"
         style={{ animationDuration: "38s" }}
       >
         {LOOP.map((cat, i) => {
@@ -35,7 +35,7 @@ export function GenreMarquee() {
           return (
             <div
               key={`${cat.title}-${i}`}
-              className="card-glass flex shrink-0 items-center gap-3 rounded-2xl px-5 py-3 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-primary/30"
+              className="card-glass mr-4 flex shrink-0 items-center gap-3 rounded-2xl px-5 py-3 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-primary/30 sm:mr-5"
             >
               <span
                 className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br text-white ${accent}`}

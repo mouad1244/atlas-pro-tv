@@ -27,13 +27,13 @@ export function Testimonials() {
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-surface-alt to-transparent sm:w-28" />
 
         <div
-          className="flex w-max items-stretch gap-5 px-5 py-2 will-change-transform animate-marquee group-hover:[animation-play-state:paused] sm:gap-6 sm:px-8"
+          className="flex w-max items-stretch py-2 will-change-transform animate-marquee group-hover:[animation-play-state:paused]"
           style={{ animationDuration: "60s" }}
         >
           {LOOP.map((t, i) => (
             <div
               key={`${t.name}-${i}`}
-              className="card-glass relative flex h-[302px] w-[300px] shrink-0 flex-col overflow-hidden rounded-2xl transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_20px_44px_-18px_rgba(76,110,245,0.35)] sm:w-[340px]"
+              className="card-glass relative mr-5 flex h-[302px] w-[300px] shrink-0 flex-col overflow-hidden rounded-2xl transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_20px_44px_-18px_rgba(76,110,245,0.35)] sm:mr-6 sm:w-[340px]"
             >
               {/* Avatar banner */}
               <div className="relative h-20 shrink-0 overflow-hidden bg-gradient-to-br from-primary via-blue to-ink-soft">
