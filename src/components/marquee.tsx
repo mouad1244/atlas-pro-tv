@@ -1,3 +1,7 @@
+"use client";
+
+import { useSeamlessMarquee } from "./use-seamless-marquee";
+
 export const DEVICE_ITEMS = [
   "Smart TV",
   "Android TV",
@@ -29,6 +33,8 @@ const HERO_PHOTOS = ["1", "2", "3", "4", "5"].map(
 );
 
 export function PhotoMarquee() {
+  const { firstRef, secondRef, trackStyle } =
+    useSeamlessMarquee<HTMLSpanElement>(9);
   const loop = [...HERO_PHOTOS, ...HERO_PHOTOS];
 
   return (
@@ -37,11 +43,14 @@ export function PhotoMarquee() {
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-ink to-transparent" />
       <div
         className="flex w-max items-center will-change-transform group-hover:[animation-play-state:paused] animate-marquee"
-        style={{ animationDuration: "42s" }}
+        style={trackStyle}
       >
         {loop.map((src, i) => (
           <span
             key={`${src}-${i}`}
+            ref={
+              i === 0 ? firstRef : i === HERO_PHOTOS.length ? secondRef : undefined
+            }
             className="mr-4 flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/15 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.5)] transition-transform duration-300 ease-out hover:scale-110"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -64,6 +73,8 @@ export function Marquee({
   items: string[];
   reverse?: boolean;
 }) {
+  const { firstRef, secondRef, trackStyle } =
+    useSeamlessMarquee<HTMLSpanElement>(22);
   const loop = [...items, ...items];
 
   return (
@@ -74,11 +85,12 @@ export function Marquee({
         className={`flex w-max items-center will-change-transform group-hover:[animation-play-state:paused] ${
           reverse ? "animate-marquee-reverse" : "animate-marquee"
         }`}
-        style={{ animationDuration: "42s" }}
+        style={trackStyle}
       >
         {loop.map((item, i) => (
           <span
             key={`${item}-${i}`}
+            ref={i === 0 ? firstRef : i === items.length ? secondRef : undefined}
             className="flex items-center gap-2 rounded-full px-6 py-1.5 text-[13px] font-medium whitespace-nowrap text-white/45 transition-all duration-300 ease-out hover:scale-110 hover:bg-white/5 hover:text-white hover:[text-shadow:0_0_18px_rgba(168,148,255,0.6)]"
           >
             <span className="h-1 w-1 rounded-full bg-primary-light" />

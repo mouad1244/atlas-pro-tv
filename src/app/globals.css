@@ -53,13 +53,19 @@
   50% { opacity: 1; }
 }
 
+/*
+ * Distance is a per-instance CSS custom property (--marquee-distance) set
+ * inline by useSeamlessMarquee, measured live from the actual rendered gap
+ * between the first item and its duplicate — not assumed from a percentage
+ * of the track's total width. See use-seamless-marquee.ts for why.
+ */
 @keyframes marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(calc(-1 * var(--marquee-distance, 0px))); }
 }
 
 @keyframes marquee-reverse {
-  from { transform: translateX(-50%); }
+  from { transform: translateX(calc(-1 * var(--marquee-distance, 0px))); }
   to { transform: translateX(0); }
 }
 

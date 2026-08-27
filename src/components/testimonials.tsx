@@ -1,10 +1,16 @@
+"use client";
+
 import { TESTIMONIALS } from "@/lib/config";
 import { StarIcon } from "./icons";
 import { Reveal } from "./reveal";
+import { useSeamlessMarquee } from "./use-seamless-marquee";
 
 const LOOP = [...TESTIMONIALS, ...TESTIMONIALS];
 
 export function Testimonials() {
+  const { firstRef, secondRef, trackStyle } =
+    useSeamlessMarquee<HTMLDivElement>(32);
+
   return (
     <section id="testimonials" className="relative overflow-hidden bg-surface-alt py-20 md:py-28">
       <div className="container-page">
@@ -28,11 +34,18 @@ export function Testimonials() {
 
         <div
           className="flex w-max items-stretch py-2 will-change-transform animate-marquee group-hover:[animation-play-state:paused]"
-          style={{ animationDuration: "60s" }}
+          style={trackStyle}
         >
           {LOOP.map((t, i) => (
             <div
               key={`${t.name}-${i}`}
+              ref={
+                i === 0
+                  ? firstRef
+                  : i === TESTIMONIALS.length
+                    ? secondRef
+                    : undefined
+              }
               className="card-glass relative mr-5 flex h-[302px] w-[300px] shrink-0 flex-col overflow-hidden rounded-2xl transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_20px_44px_-18px_rgba(76,110,245,0.35)] sm:mr-6 sm:w-[340px]"
             >
               {/* Avatar banner */}
