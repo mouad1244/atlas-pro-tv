@@ -34,7 +34,7 @@ const HERO_PHOTOS = ["1", "2", "3", "4", "5"].map(
 
 export function PhotoMarquee() {
   const { firstRef, secondRef, trackStyle } =
-    useSeamlessMarquee<HTMLSpanElement>(9);
+    useSeamlessMarquee<HTMLSpanElement>(45);
   const loop = [...HERO_PHOTOS, ...HERO_PHOTOS];
 
   return (
