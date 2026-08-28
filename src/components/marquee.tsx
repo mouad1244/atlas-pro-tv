@@ -28,9 +28,17 @@ export const CONTENT_ITEMS = [
   "Chaînes jeunesse",
 ];
 
-const HERO_PHOTOS = ["1", "2", "3", "4", "5"].map(
+const HERO_PHOTOS_BASE = ["1", "2", "3", "4", "5"].map(
   (n) => `/assets/hero-marquee/${n}.avif`
 );
+// Repeat the 5 logos twice within each pass of the belt so a logo reaches
+// the center about twice as often — same assets, denser/more frequent
+// appearance, no change to individual logo size or styling.
+const HERO_REPEAT_COUNT = 2;
+const HERO_PHOTOS = Array.from(
+  { length: HERO_REPEAT_COUNT },
+  () => HERO_PHOTOS_BASE
+).flat();
 
 export function PhotoMarquee() {
   const { firstRef, secondRef, trackStyle } =
