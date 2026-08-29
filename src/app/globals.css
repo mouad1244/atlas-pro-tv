@@ -191,6 +191,23 @@ body {
   );
 }
 
+/*
+ * Color-grades the hero photo toward a deep blue/cyan "premium home
+ * theater at night" mood (reference: cool blue ambient light, TV glow).
+ * mix-blend-mode: color takes this gradient's hue/saturation and applies
+ * it over the photo's own luminosity — the shot keeps its detail and
+ * shape, it just reads cooler and more cinematic instead of neutral.
+ */
+.hero-color-grade {
+  background-image: linear-gradient(
+    135deg,
+    rgba(30, 64, 175, 0.6) 0%,
+    rgba(14, 116, 144, 0.55) 45%,
+    rgba(8, 47, 73, 0.65) 100%
+  );
+  mix-blend-mode: color;
+}
+
 .hero-scrim-mobile {
   background-image: linear-gradient(
     to bottom,

@@ -26,7 +26,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-top md:hidden"
+        className="object-cover object-top [filter:brightness(0.85)_contrast(1.08)_saturate(1.05)] md:hidden"
       />
       <Image
         src="/assets/hero-bg.jpg"
@@ -34,8 +34,11 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="hidden object-cover md:block"
+        className="hidden object-cover [filter:brightness(0.85)_contrast(1.08)_saturate(1.05)] md:block"
       />
+      {/* Deep blue/cyan color grade over the photo — cooler, moodier,
+          premium "home theater at night" feel */}
+      <div className="hero-color-grade pointer-events-none absolute inset-0" />
       {/* Mobile: atmospheric scrim behind the text block below the photo */}
       <div className="hero-scrim-mobile pointer-events-none absolute inset-0 md:hidden" />
       {/* Desktop: rich purple/blue atmosphere on the left so text stays legible, photo breathes on the right */}
