@@ -3,7 +3,7 @@ export const SITE = {
   tagline: "IPTV Premium France",
   domain: "atlasprotv.fr",
   // TODO: remplacez par votre vrai numéro WhatsApp (format international, sans "+" ni espaces)
-  whatsappNumber: "212600000000",
+  whatsappNumber: "212645703926",
 };
 
 export function waLink(message: string) {
