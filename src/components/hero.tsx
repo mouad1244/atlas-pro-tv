@@ -101,12 +101,18 @@ export function Hero() {
           style={{ animationDelay: "450ms" }}
         >
           <div className="flex -space-x-2.5">
-            {["MK", "SB", "AL", "JD"].map((initials) => (
+            {["avatar-1", "avatar-2", "avatar-3", "avatar-4"].map((avatar) => (
               <span
-                key={initials}
-                className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink bg-gradient-to-br from-primary-light to-primary text-[11px] font-semibold text-white"
+                key={avatar}
+                className="relative h-9 w-9 overflow-hidden rounded-full border-2 border-ink"
               >
-                {initials}
+                <Image
+                  src={`/assets/avatars/${avatar}.jpg`}
+                  alt=""
+                  fill
+                  sizes="36px"
+                  className="object-cover"
+                />
               </span>
             ))}
           </div>
